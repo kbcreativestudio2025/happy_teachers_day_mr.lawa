@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day - Mr. Lawa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Advanced CSS Reset and Variables */
+        :root {
+            --primary: #00c6ff;
+            --secondary: #0072ff;
+            --accent: #ff2d75;
+            --biology-green: #00ff88;
+            --biology-blue: #00ccff;
+            --biology-purple: #b967ff;
+            --biology-orange: #ff8a00;
+            --dark: #0a192f;
+            --light: #f8fbfe;
+            --text: #e6f1ff;
+            --card-bg: rgba(16, 42, 87, 0.7);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark), #0d1b3a, #162b4d);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Advanced Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        /* Advanced Glassmorphism Container */
+        .glass-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        /* Advanced Typography */
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            background: linear-gradient(135deg, var(--biology-green), var(--biology-blue), var(--biology-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% {
+                filter: drop-shadow(0 0 5px rgba(0, 198, 255, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8));
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--biology-blue);
+            font-weight: 300;
+        }
+
+        /* Advanced Biology Shapes */
+        .biology-shapes-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .shape-card {
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        .shape-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .shape-card:hover .shape-inner {
+            transform: rotateY(180deg);
+        }
+
+        .shape-front, .shape-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+        }
+
+        .shape-back {
+            transform: rotateY(180deg);
+            background: rgba(16, 42, 87, 0.9);
+        }
+
+        /* Advanced Mitochondria */
+        .mitochondria {
+            position: relative;
+            width: 180px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--biology-green), var(--biology-blue));
+            border-radius: 50% 20% 20% 50%;
+            animation: mitochondriaFloat 6s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .mitochondria::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 10px;
+            left: 20px;
+            animation: cristaeFloat 4s ease-in-out infinite;
+        }
+
+        .mitochondria::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            top: 20px;
+            right: 30px;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes mitochondriaFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-15px) rotate(1deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(-1deg);
+            }
+        }
+
+        @keyframes cristaeFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.1);
+            }
+        }
+
+        /* Advanced Cell Structure */
+        .cell {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle at 30% 30%, var(--biology-blue), transparent);
+            border-radius: 50%;
+            border: 3px solid var(--biology-blue);
+            animation: cellPulse 8s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(0, 204, 255, 0.6);
+            overflow: hidden;
+        }
+
+        .cell::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2) 2%, transparent 5%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 2%, transparent 5%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 2%, transparent 5%);
+            animation: organelleMove 20s linear infinite;
+        }
+
+        .nucleus {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, var(--biology-purple), #8a2be2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: nucleusGlow 4s ease-in-out infinite, nucleusOrbit 15s linear infinite;
+            box-shadow: 0 0 20px rgba(185, 103, 255, 0.8);
+        }
+
+        .nucleolus {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: nucleolusPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes cellPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 25px rgba(0, 204, 255, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(0, 204, 255, 0.9);
+            }
+        }
+
+        @keyframes nucleusGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(185, 103, 255, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(185, 103, 255, 1), 0 0 50px rgba(185, 103, 255, 0.6);
+            }
+        }
+
+        @keyframes nucleusOrbit {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg) translateX(40px) rotate(-360deg);
+            }
+        }
+
+        @keyframes organelleMove {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes nucleolusPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+        }
+
+        /* Advanced DNA Helix */
+        .dna-helix {
+            position: relative;
+            width: 120px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .dna-strand {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--biology-orange), transparent);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dna-base {
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background: var(--biology-green);
+            left: 50%;
+            transform-origin: left center;
+            animation: dnaRotate 3s infinite linear;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+        }
+
+        .dna-base::before, .dna-base::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--biology-purple);
+            top: -3px;
+            animation: basePulse 2s infinite alternate;
+        }
+
+        .dna-base::before {
+            left: -4px;
+        }
+
+        .dna-base::after {
+            right: -4px;
+        }
+
+        @keyframes dnaRotate {
+            0% {
+                transform: rotate(0deg) translateX(-15px);
+            }
+            100% {
+                transform: rotate(360deg) translateX(-15px);
+            }
+        }
+
+        @keyframes basePulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(185, 103, 255, 0.5);
+            }
+            100% {
+                transform: scale(1.3);
+                box-shadow: 0 0 10px rgba(185, 103, 255, 0.9);
+            }
+        }
+
+        /* FIXED: SIMPLE Teacher Photo Section */
+        .teacher-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* SIMPLE Image - This WILL work */
+        .teacher-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(45deg, var(--biology-green), var(--biology-blue), var(--biology-purple), var(--biology-orange)) border-box;
+            animation: photoGlow 3s ease-in-out infinite alternate;
+            box-shadow: 0 0 30px rgba(0, 198, 255, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .teacher-photo:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes photoGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 40px rgba(0, 255, 136, 0.7), 0 0 60px rgba(185, 103, 255, 0.5);
+            }
+        }
+
+        /* Rotating frame around the image */
+        .photo-frame {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--biology-green), var(--biology-blue), var(--biology-purple), var(--biology-orange)) border-box;
+            animation: frameRotate 8s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes frameRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Advanced Quotes Section */
+        .quotes-section {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2rem;
+        }
+
+        .quote-container {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .quote-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease, transform 1s ease;
+            transform: translateX(100%);
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .quote-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .quote-slide.prev {
+            transform: translateX(-100%);
+        }
+
+        .quote {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            background: linear-gradient(135deg, var(--biology-green), var(--biology-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: var(--biology-orange);
+            font-weight: 600;
+        }
+
+        .quote-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--glass-border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quote-dot.active {
+            background: var(--biology-green);
+            transform: scale(1.3);
+        }
+
+        /* Advanced Interactive Elements */
+        .interactive-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .biology-button {
+            background: linear-gradient(135deg, var(--biology-green), var(--biology-blue));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .biology-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .biology-button:hover::before {
+            left: 100%;
+        }
+
+        .biology-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .message-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s ease;
+            margin-top: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 0 2rem;
+        }
+
+        .message-container.open {
+            max-height: 500px;
+            padding: 2rem;
+        }
+
+        .message-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        /* Advanced Instructions */
+        .instructions {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 255, 136, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+            }
+        }
+
+        .instruction-text {
+            font-size: 1.1rem;
+            color: var(--biology-blue);
+            margin-bottom: 1rem;
+        }
+
+        .instruction-arrow {
+            font-size: 2rem;
+            color: var(--biology-green);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Advanced Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: rgba(10, 25, 47, 0.8);
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--biology-green), var(--biology-blue), var(--biology-purple), var(--biology-orange));
+            animation: colorFlow 5s linear infinite;
+        }
+
+        @keyframes colorFlow {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-signature {
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--biology-green), var(--biology-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .glass-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .biology-shapes-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .shape-card {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .teacher-section {
+                text-align: center;
+            }
+            
+            .photo-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .quote {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .shape-card {
+                width: 260px;
+                height: 260px;
+            }
+            
+            .photo-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .biology-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="glass-container">
+            <h1 class="main-title">Happy Teacher's Day</h1>
+            <h2 class="subtitle">To Our Inspiring Biology Mentor</h2>
+            <div class="instructions">
+                <p class="instruction-text">👆 Click on the biology shapes to discover their meanings!</p>
+                <p class="instruction-text">👇 Scroll down to explore more interactive elements</p>
+                <div class="instruction-arrow">↓</div>
+            </div>
+        </header>
+
+        <!-- Biology Shapes Section -->
+        <section class="glass-container">
+            <h2 class="subtitle">The Biology of Inspiration</h2>
+            <div class="biology-shapes-container">
+                <!-- Mitochondria Card -->
+                <div class="shape-card">
+                    <div class="shape-inner">
+                        <div class="shape-front">
+                            <div class="mitochondria"></div>
+                            <h3>Mitochondria</h3>
+                            <p>Click to reveal meaning</p>
+                        </div>
+                        <div class="shape-back">
+                            <h3>The Powerhouse</h3>
+                            <p>Like mitochondria energize cells, you energize our curiosity and fuel our passion for learning biology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cell Card -->
+                <div class="shape-card">
+                    <div class="shape-inner">
+                        <div class="shape-front">
+                            <div class="cell">
+                                <div class="nucleus">
+                                    <div class="nucleolus"></div>
+                                </div>
+                            </div>
+                            <h3>Cell Structure</h3>
+                            <p>Click to reveal meaning</p>
+                        </div>
+                        <div class="shape-back">
+                            <h3>Nucleus of Knowledge</h3>
+                            <p>You are the nucleus of our learning cell, containing the DNA of wisdom that guides our educational growth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DNA Card -->
+                <div class="shape-card">
+                    <div class="shape-inner">
+                        <div class="shape-front">
+                            <div class="dna-helix">
+                                <div class="dna-strand"></div>
+                                <div class="dna-base" style="top: 0%"></div>
+                                <div class="dna-base" style="top: 10%"></div>
+                                <div class="dna-base" style="top: 20%"></div>
+                                <div class="dna-base" style="top: 30%"></div>
+                                <div class="dna-base" style="top: 40%"></div>
+                                <div class="dna-base" style="top: 50%"></div>
+                                <div class="dna-base" style="top: 60%"></div>
+                                <div class="dna-base" style="top: 70%"></div>
+                                <div class="dna-base" style="top: 80%"></div>
+                                <div class="dna-base" style="top: 90%"></div>
+                            </div>
+                            <h3>DNA Helix</h3>
+                            <p>Click to reveal meaning</p>
+                        </div>
+                        <div class="shape-back">
+                            <h3>Blueprint of Excellence</h3>
+                            <p>Your teachings are encoded in our minds like DNA, forming the blueprint for our academic success and personal growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIXED Teacher Photo Section - Simple and Working -->
+        <section class="glass-container teacher-section">
+            <h2 class="subtitle">Our Inspiring Teacher</h2>
+            <div class="photo-container">
+                <!-- SIMPLE IMAGE THAT WORKS -->
+                <img src="lawa.jpg" alt="Mr. Lawa" class="teacher-photo">
+                <div class="photo-frame"></div>
+            </div>
+            <h3 class="main-title" style="font-size: 2.5rem;">Mr. Lawa</h3>
+            <p class="subtitle">The Catalyst of Our Scientific Journey</p>
+        </section>
+
+        <!-- Quotes Section -->
+        <section class="glass-container quotes-section">
+            <h2 class="subtitle">Biological Blessings</h2>
+            <div class="quote-container">
+                <div class="quote-slide active">
+                    <p class="quote">"You are the mitochondria of our educational cell - the powerhouse that energizes our curiosity and fuels our love for biology."</p>
+                    <p class="quote-author">- Karan Bhurani</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote">"Like enzymes that catalyze reactions, you accelerate our understanding and make complex concepts digestible."</p>
+                    <p class="quote-author">- Karan Bhurani</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote">"Your guidance is the double helix of our growth - two strands of support and knowledge intertwined to help us evolve."</p>
+                    <p class="quote-author">- Karan Bhurani</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote">"You've planted the seeds of scientific inquiry in the fertile soil of our minds, helping us grow into budding biologists."</p>
+                    <p class="quote-author">- Karan Bhurani</p>
+                </div>
+            </div>
+            <div class="quote-nav">
+                <div class="quote-dot active" data-index="0"></div>
+                <div class="quote-dot" data-index="1"></div>
+                <div class="quote-dot" data-index="2"></div>
+                <div class="quote-dot" data-index="3"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section class="glass-container interactive-section">
+            <h2 class="subtitle">A Special Message</h2>
+            <p class="instruction-text">Click the button below to reveal my heartfelt message</p>
+            <button class="biology-button" id="specialMessage">
+                <i class="fas fa-heart"></i> Reveal Special Message
+            </button>
+            <div class="message-container" id="messageContainer">
+                <p class="message-text">Dear Mr. Lawa,</p>
+                <p class="message-text">On this Teacher's Day, I want to express my deepest gratitude for your unwavering support and inspiring guidance. You haven't just taught me biology - you've shown me the poetry in proteins, the art in anatomy, and the music in molecular bonds.</p>
+                <p class="message-text">Your passion has been infectious (in the best way!), and your support has been the steady constant in my academic ecosystem. You've not only equipped me with knowledge but also with the curiosity to explore the wonders of life.</p>
+                <p class="message-text">Thank you for being the amazing teacher and mentor that you are!</p>
+                <p class="message-text" style="text-align: center; margin-top: 1.5rem;"><strong>With deepest gratitude,<br>Karan Bhurani</strong></p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Made with ❤️ by Karan Bhurani</p>
+            <p class="footer-signature">Happy Teacher's Day, Mr. Lawa!</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Advanced Particles Background
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: ["#00ff88", "#00ccff", "#b967ff", "#ff8a00"] },
+                shape: { 
+                    type: ["circle", "triangle", "polygon"],
+                    polygon: { nb_sides: 6 }
+                },
+                opacity: { value: 0.5, random: true },
+                size: { value: 4, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00ccff",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "bounce",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Quote Slider
+        const quoteSlides = document.querySelectorAll('.quote-slide');
+        const quoteDots = document.querySelectorAll('.quote-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            quoteSlides.forEach(slide => slide.classList.remove('active', 'prev'));
+            quoteDots.forEach(dot => dot.classList.remove('active'));
+            
+            quoteSlides[index].classList.add('active');
+            quoteDots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % quoteSlides.length;
+            showSlide(nextIndex);
+        }
+
+        // Add click events to dots
+        quoteDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showSlide(index);
+            });
+        });
+
+        // Auto-advance quotes
+        setInterval(nextSlide, 5000);
+
+        // Special Message Reveal
+        const messageButton = document.getElementById('specialMessage');
+        const messageContainer = document.getElementById('messageContainer');
+
+        messageButton.addEventListener('click', function() {
+            messageContainer.classList.toggle('open');
+            this.textContent = messageContainer.classList.contains('open') 
+                ? 'Hide Message' 
+                : 'Reveal Special Message';
+        });
+
+        // Image fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const teacherPhoto = document.querySelector('.teacher-photo');
+            
+            teacherPhoto.onerror = function() {
+                console.log('Image not found, using placeholder');
+                this.src = 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
+            };
+        });
+
+        // Add floating animation to biology shapes on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe biology shapes
+        document.querySelectorAll('.mitochondria, .cell, .dna-helix').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add interactive hover effects to biology shapes
+        document.querySelectorAll('.shape-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
